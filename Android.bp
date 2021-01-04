@@ -2,6 +2,7 @@ cc_library {
     name: "libgflags",
     host_supported: true,
     vendor_available: true,
+    product_available: true,
     recovery_available: true,
     srcs: [
         "src/gflags.cc",
@@ -21,4 +22,9 @@ cc_library {
     export_include_dirs: [
         "android",
     ],
+    static: {
+        apex_available: [
+            "com.android.gki.*",
+        ],
+    },
 }
